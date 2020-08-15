@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mainchin.master.cs" Inherits="mainchin" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>WestWorld Shop - Trung tâm mua bán sản phẩm chính hãng Sony</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="description" content="A Community Based WordPress Theme" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="menusm.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="pagenavi-css.css" media="screen" />
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>		<!-- jQuery -->
+    <script type="text/javascript" src="js/menusm.js"></script>		
+    <script type="text/javascript" src="js/script.js"></script>	
+    
+</head>
+<body class="html_bg">
+    <form id="form1" runat="server">
+   
+    <div>
+    <div id="page">
+  <div id="header">
+    <div><a href="Admin/DangNhapAdmin.aspx">Đăng nhập quyền ADMIN</a></div>
+    <div class="clr"></div>
+    <!-- /navigation -->  
+    <div class="logo"><h1><a href="GioiThieuSanPham.aspx">WestWorld Shop <small class="slogan">Trung tâm mua bán sản phẩm chính hãng Sony</small></a></h1></div>
+    <div class="topnav">
+      <ul class="menusm">
+        <li <%--class="current_page_item"--%>><a href="GioiThieuSanPham.aspx">Trang chủ</a></li>
+        <li><a href="CuaHang.aspx">Cửa hàng</a></li>
+        <li><a href="#">Sản phẩm</a><ul>
+          <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=1">Ti vi</a></li>
+          <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=2">Máy tính</a></li>
+          <li><a href="#">Điện thoại</a><ul><li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=3">Điện thoại Xperia</a></li></ul></li>
+          <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=4">Máy ảnh</a></li>
+           <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=7">Máy nghe nhạc</a></li>
+           <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=8">Máy tính bảng</a></li>
+         </ul></li>
+          <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click1">Đơn Hàng</asp:LinkButton></li>
+        <li><a href="GioHang.aspx">Giỏ Hàng</a></li>
+          <%--<li><a href="About.aspx">Về chúng tôi</a></li>--%>
+      </ul>
+      <div class="clr">
+          <asp:Label ID="lblchao" runat="server" Text=""></asp:Label></div>
+    </div>
+  
+   <%-- <div class="search">
+      <form method="get" id="searchform" action="">
+        <fieldset id="search">
+          <span>
+          <input type="text" value="Tìm kiếm" onclick="this.value='';" name="s" id="s" />
+          <input name="searchsubmit" type="image" src="images/search.gif" value="Go" id="searchsubmit" class="btn"  />
+          </span>
+        </fieldset>
+      </form>
+    </div>--%>
+    <!--/searchform --><%--<div class="clr"></div>--%>
+  </div> <!--/header -->
+  <div id="columns">
+    <div class="index-cols">
+     <div class="thantrang">
+        	<div class="bentrai">
+        	    <div class="menudoc">
+           	  		<div class="thanhmenu">
+                    	<h4>DANH MỤC SẢN PHẨM</h4>
+                    </div>
+                    <div class="danhmucsanpham">
+                    	<ul>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="menuDM" EnableModelValidation="True" DataKeyNames="IdDanhMucSanPham" DataSourceID="SqlDataSource1">
+                             <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# Eval("IdDanhMucSanPham","../SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham={0}") %>'
+                                            Text='<%# ""+Eval("TenDanhMucSanPham") %>'></asp:HyperLink>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SQLCONN %>" SelectCommand="SELECT [IdDanhMucSanPham], [TenDanhMucSanPham] FROM [DanhMucSanPham]"></asp:SqlDataSource>
+                        </ul>
+                    </div>
+                </div>
+                  <div class="menudoc">
+           	  		<div class="thanhmenu">
+                    	<h4>SẢN PHẨM MỚI NHẤT</h4>
+                    </div>
+                      <div>
+                          <asp:Image runat="server" ImageUrl="https://estnn.com/wp-content/uploads/2020/04/playstation-5-ps5.png" Width="200px" Height="250px"/>
+                      </div>
+                    <div class="tintuc">
+                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; padding:5px;">
+                            <tr>
+                                <td style="width: 207px">
+                                    <%--<uc3:Top10SanPham ID="Top10SanPham1" runat="server" />--%>
+                                </td>
+                            </tr>
+                        </table>
+                    	
+                    </div>
+                    </div>
+                    <div class="menudoc">
+                        <div class="thanhmenu">
+                            <h4>THÔNG TIN THỊ TRƯỜNG</h4>
+                        </div>
+                        <div>
+                            <table style="border: 1px solid rgb(238, 238, 238);" cellpadding="2" cellspacing="0" width="100%">
+                    <tbody>
+                    <tr>
+                            <td align="center" style="height: 23px">
+                                <img alt=""  src="../images/uw_weather_icon.png" width="9" height="15"/>
+                            </td>
+                            <td style="height: 23px" >
+                                <a href="http://hn.24h.com.vn/ttcb/thoitiet/thoitiet.php" title="Tỉ giá ngoại tệ">Thời Tiết</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="height: 23px">
+                                <img alt="" src="../images/icon_dollar.gif" width="9" height="15"/>
+                            </td>
+                            <td style="height: 23px" >
+                                <a href="http://chungkhoan.24h.com.vn/" title="Tỉ giá ngoại tệ">Tỉ giá ngoại tệ</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <img alt="" src="../images/goldIcon.gif" width="9" height="15"/>
+                            </td>
+                            <td>
+                                <a href="http://hcm.24h.com.vn/ttcb/giavang/giavang.php" title="Giá vàng">Giá vàng</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <img alt="" src="../images/icon_stock.gif" width="9" height="15"/>
+                            </td>
+                            <td >
+                                <a href="http://hn.24h.com.vn/ttcb/tygia/tygia.php" title="Chứng khoán">Chứng khoán</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <img alt="" src="../images/icon_loto.gif" width="9" height="15"/>
+                            </td>
+                            <td>
+                                <a href="http://ketquaxoso.24h.com.vn" title="Kết quả xổ số kiến thiết">KQ xổ số kiến thiết</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                        </div>   
+                    </div>
+                    <div class="menudoc">
+                        <div class="thanhmenu">
+                            <h4>LIÊN KẾT</h4>
+                        </div>
+                        <div>
+                            
+                        </div>
+                        <div style="border:1px solid #ccc">
+                            <iframe width="200" height="250" src="https://www.youtube.com/embed/lZ5FUkKBDqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           </div>
+                    </div>
+            </div>
+            <div class="giua">
+                <div class="product">
+                   
+                </div>
+                <div class="sanpham">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                   
+                 
+                </div>
+            </div>
+            <div class="benphai">
+                <div class="thanhmenu">
+                    <h4>BÁN HÀNG QUA ĐIỆN THOẠI</h4>
+                </div>
+                <div class="muahanggoingay">
+                    <h4><b>Mua hàng gọi ngay:</b></h4>
+                    <p style="text-indent:30px; color:Red; font-weight:bold;">Holine:016.88.767.549</p>
+                    <p style="text-indent:30px; color:Red; font-weight:bold;">Holine:016.87.862.090</p>
+                    <hr/>
+                    <p style="text-align:center; font-weight:bold; font-size:14px;">Giao hàng tận nơi</p>
+                    <ul><li><a href="#">Hướng dẫn mua hàng</a></li></ul>
+                </div>
+                <div class="thanhmenu">
+                    <h4>SUPPORT</h4>
+                </div>
+               <div class="hotrokhachhang">
+               </div>
+               <div class="menutintuc">
+                    <div class="thanhmenu">
+                        <h4>QUẢNG CÁO</h4>
+                        
+                    </div>
+                    <div style="overflow:hidden">
+                    <asp:Image runat="server" ImageUrl="https://i.insider.com/551c0edceab8ea9406d4441b?width=300&format=jpeg&auto=webp" Width="200px" CssClass="ads" />
+                   </div>
+                    <div class="thanhmenu">
+                        <h4>SONY CERTIFICATION</h4>
+                    </div>
+                    <div style="border:1px solid #ccc">
+                        <asp:Image runat="server" ImageUrl="https://www.takt.eu/my_uploads/2018/05/SONY_GREEN_PARTNER_2017-2019.jpg" Width="200px" Height="250px"/>
+                    </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div><!--/columns -->
+    
+   
+  </div>  <!--/page -->
+  <div class="clr"></div>
+</div>
+<div class="footer2">
+    <div class="footer2_resize">
+      <div class="col col4">
+        <h2>Thông tin liên hệ</h2>
+        <p><span>Địa chỉ:</span>Đại học CNTP</p>
+        <p><span>Điện thoại:</span> +84-0392718857</p>
+        <p><span>E-mail:</span> <a href="#">huysteve12@gmail.com</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+<div id="page_bottom">
+  <div id="footer">
+    <div class="text1">&copy; Copyright Lý Tùng Quang Huy. All Rights Reserved</div>
+    <div class="text2">Design: Lý Tùng Quang Huy & Nguyễn Hữu Nghiêm</div>
+  </div>
+  <div class="clr"></div>
+  <!--/footer -->
+</div>
+    </form>
+</body>
+</html>

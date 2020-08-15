@@ -1,0 +1,9 @@
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\bin\Debug\MOONLY.Common.dll
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\bin\Debug\MOONLY.Common.pdb
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\bin\Debug\MOONLY.Operational.dll
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\bin\Debug\MOONLY.Operational.pdb
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\obj\Debug\MOONLY.Common.csprojAssemblyReference.cache
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\obj\Debug\MOONLY.Common.csproj.CoreCompileInputs.cache
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\obj\Debug\MOONLY.Common.csproj.CopyComplete
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\obj\Debug\MOONLY.Common.dll
+F:\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\[Sharecode.vn] Code do an thiet ke web ban hang sony ASP.Net full code\MOONLY\MOONLY.Common\obj\Debug\MOONLY.Common.pdb
